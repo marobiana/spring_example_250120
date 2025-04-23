@@ -3,7 +3,7 @@ package com.example.lesson02.domain;
 import java.time.LocalDateTime;
 
 // java bean
-// domain, DTO, Entity
+// domain, DTO, Entity(테이블 항목)
 public class UsedGoods {
 	private int id;
 	private int sellerId;
