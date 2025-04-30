@@ -3,6 +3,7 @@ package com.example.lesson04.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.lesson04.domain.User;
 import com.example.lesson04.mapper.UserMapper;
 
 @Service
@@ -18,4 +19,14 @@ public class UserBO {
 		
 		userMapper.insertUser(name, yyyymmdd, email, introduce);
 	}
+	
+	// input: X
+	// output: User(단건 or null)
+	public User getLatestUser() {
+		return userMapper.selectLatestUser();
+	}
 }
+
+
+
+
