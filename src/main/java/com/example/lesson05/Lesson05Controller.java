@@ -1,6 +1,10 @@
 package com.example.lesson05;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,6 +52,21 @@ public class Lesson05Controller {
 		model.addAttribute("users", users); // List!!!!!
 		
 		return "lesson05/ex02";
+	}
+	
+	@GetMapping("/ex03")
+	public String ex03(Model model) {
+		Date date = new Date();
+		model.addAttribute("date", date);
+		
+		LocalDateTime localDateTime = LocalDateTime.now();
+		model.addAttribute("localDateTime", localDateTime);
+		
+		model.addAttribute("localDate", LocalDate.now());
+		
+		model.addAttribute("zonedDateTime", ZonedDateTime.now());
+		
+		return "lesson05/ex03";
 	}
 }
 
