@@ -25,6 +25,12 @@ public class UserBO {
 	public User getLatestUser() {
 		return userMapper.selectLatestUser();
 	}
+	
+	// input: email
+	// output: boolean    true:중복
+	public boolean isDuplicateByEmail(String email) {
+		return userMapper.isDuplicateByEmail(email);
+	}
 }
 
 

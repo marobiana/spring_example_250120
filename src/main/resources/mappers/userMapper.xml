@@ -39,4 +39,16 @@
 		LIMIT 1
 	</select>
 	
+	<select id="isDuplicateByEmail" 
+	parameterType="string" resultType="boolean">
+		SELECT
+			COUNT(*)
+		FROM
+			`new_user`
+		WHERE 
+			`email` = #{email}
+	</select>
 </mapper>
+
+
+
