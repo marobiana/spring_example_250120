@@ -30,6 +30,15 @@ public class Lesson07Ex01RestController {
 		// id가 6번인 dreamJob 변경 => 마케터
 		return studentBO.updateStudentDreamJobById(6, "마케터");
 	}
+	
+	// D: Delete
+	@GetMapping("/delete")
+	public String delete() {
+		// id:5 삭제
+		studentBO.deleteStudentById(5);
+		return "삭제 완료";
+	}
+	
 }
 
 

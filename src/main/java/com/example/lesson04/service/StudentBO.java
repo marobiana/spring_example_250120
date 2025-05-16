@@ -1,6 +1,7 @@
 package com.example.lesson04.service;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,6 +53,22 @@ public class StudentBO {
 		}
 		
 		return student;
+	}
+	
+	// jpa delete
+	// input: id
+	// output: X
+	public void deleteStudentById(int id) {
+		// 방법1)
+//		StudentEntity student = studentRepository.findById(id).orElse(null);
+//		if (student != null) {
+//			studentRepository.delete(student);
+//		}
+		
+		// 방법2)
+		Optional<StudentEntity> studentOptional =  studentRepository.findById(id);
+		// 람다
+		studentOptional.ifPresent(s -> studentRepository.delete(s));
 	}
 	
 	// Mybatis add
